@@ -4,6 +4,7 @@ namespace Spatie\MediaLibrary\Test\HasMediaTrait;
 
 use File;
 use Spatie\MediaLibrary\Test\TestCase;
+use Spatie\MediaLibrary\Test\TestModel;
 
 class DeleteMediaTest extends TestCase
 {
@@ -90,6 +91,24 @@ class DeleteMediaTest extends TestCase
 
         $ids->map(function ($id) {
             $this->assertTrue(File::isDirectory($this->getMediaDirectory($id)));
+        });
+    }
+
+    /**
+     * @test
+     */
+    public function it_will_remove_the_files_when_deleting_a_subject_via_query()
+    {
+        $ids = $this->testModel->getMedia('images')->lists('id');
+
+        $ids->map(function ($id) {
+            $this->assertTrue(File::isDirectory($this->getMediaDirectory($id)));
+        });
+
+        TestModel::where('id', $this->testModel->id)->delete();
+
+        $ids->map(function ($id) {
+            $this->assertFalse(File::isDirectory($this->getMediaDirectory($id)));
         });
     }
 }
