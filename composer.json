@@ -24,7 +24,7 @@
     "illuminate/console": "~5.1.16|~5.2.0",
     "illuminate/database": "~5.1.16|~5.2.0",
     "illuminate/support": "~5.1.16|~5.2.0",
-    "spatie/laravel-glide": "^2.2.4",
+    "spatie/laravel-glide": "dev-master",
     "spatie/pdf-to-image": "^1.0.1",
     "spatie/string": "^2.0"
 
@@ -36,6 +36,12 @@
     "orchestra/testbench": "^3.0",
     "doctrine/dbal": "^2.5.2"
   },
+  "repositories": [
+      {
+          "type": "git",
+          "url": "git@github.com:cybercog/laravel-glide.git"
+      }
+  ],
   "autoload": {
     "psr-4": {
       "Spatie\\MediaLibrary\\": "src"
