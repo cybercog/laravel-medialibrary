@@ -24,7 +24,7 @@
     "illuminate/console": "~5.1.16|~5.2.0",
     "illuminate/database": "~5.1.16|~5.2.0",
     "illuminate/support": "~5.1.16|~5.2.0",
-    "spatie/laravel-glide": "dev-master",
+    "spatie/laravel-glide": "dev-feature/ability-to-crop-after-resize",
     "spatie/pdf-to-image": "^1.0.1",
     "spatie/string": "^2.0"
 
